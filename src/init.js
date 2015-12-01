@@ -46,4 +46,10 @@ $(document).ready(function() {
     })
   });
 
+  $('.patrick').on("click",function(event){
+    console.log("clicked on patrick");  
+    // $(this).on('mousedown', function(event){
+    //   $(this).css({top:event.clientY,left:event.pageX})
+    // })
+  })
 });

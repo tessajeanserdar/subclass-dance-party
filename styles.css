@@ -55,3 +55,23 @@ body, a:link, a:visited, a:active{
   border-radius: 0;
 }
 
+.otter {
+  width: 160px;
+  height: 120px;
+  background: url(http://i.giphy.com/OwC969fTCyDrG.gif);
+  background-size: contain;
+  border: 0;
+  border-radius: 0;
+}
+
+.patrick {
+  background-color: black;
+  width: 260px;
+  height: 250px;
+  background: url(http://i.giphy.com/kpbFOxHZqu5eU.gif);
+  background-size: contain;
+  border: 0;
+  border-radius: 0;
+}
+
+
