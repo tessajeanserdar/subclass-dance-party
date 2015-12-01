@@ -1,9 +1,10 @@
 var makeSlideDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this,top, left, timeBetweenSteps);
   this.$node.addClass('fish');
+  this.timeBetweenSteps /= 6;
 
 
-}
+};
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -20,9 +21,33 @@ makeSlideDancer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   // this.$node.toggle();
-  this.left+=40;
 
-  this.$node.animate({left: this.left}, this.timeBetweenSteps, 'linear');
+  var width =  $('body').width();
+  var height = $('body').height();
+
+  this.left +=10
+  this.top -=10
+  
+  this.setPosition(this.top,this.left);   
+  
+
+  if (this.top <= 0) {
+    this.top = height;
+  }
+  if (this.left >= width) {
+    this.left = 0;
+  }
+
+  // this.left+=40;
+  // this.$node.animate({left: this.left}, this.timeBetweenSteps , 'linear', function(){
+  //   console.log(this);
+  //   console.log($(this));
+  //   if (this.left >= width) {
+  //     this.left = 0;
+  //     $(this).css({'left': 0});
+  //   }
+  // });
+
 };
 
 
