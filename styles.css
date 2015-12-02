@@ -16,63 +16,112 @@ body > img {
   width: 100%;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  
 }
-.title, .addDancerButton{
+/*.title, .addDancerButton{
   padding:5px 12px;
   float:right;
-}
-.topbar{
+}*/
+/*.topbar{
   height:32px;
   background-color: #555;
-}
-.title{
+}*/
+/*.title{
   background-color: #777;
-}
+}*/
 .dancer{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
 }
 
-.blue {
-  border: 15px solid blue;
-  border-radius: 50%;
+.puffer {
+  border: 0;
+  border-radius: 0;
+  background : url(http://i.imgur.com/jKfzpXI.png);
+  display : block;
+  height: 120px;
+  width: 170px;
 }
+
+.puffer:hover{
+  background-position: -170px
+}
+
+.puffer:active{
+  background-position: -350px
+}
+
 .lineUpButton {
-  padding:5px 12px;
-  float:right;
+   padding:5px 12px;
+   float:right;
+   border-radius: 5px;
+   color: grey;
+   cursor: pointer;
+   display: inline-block;
+   letter-spacing: .5px;
+   margin: 0,10,0,20;
+   text-transform: uppercase;
+   font-size: 22px;
+   font-weight: 100;
 }
 .slideDancerButton {
    padding:5px 12px;
-  float:right; 
+   float:right;
+   border-radius: 5px;
+   color: grey;
+   cursor: pointer;
+   display: inline-block;
+   letter-spacing: .5px;
+   margin: 0,10,0,20;
+   text-transform: uppercase;
+   font-size: 22px;
+   font-weight: 100;
 }
 .fish {
   width: 100px;
   height: 60px;
   background: url(http://www.clipartsheep.com/images/348/transparent-background-fish-latticed-butterfly-348894.png);
   background-size: cover;
+  transform: rotate(-30deg);
   border: 0;
   border-radius: 0;
+  z-index: 1;
 }
 
-.otter {
-  width: 160px;
-  height: 120px;
-  background: url(http://i.giphy.com/OwC969fTCyDrG.gif);
-  background-size: contain;
+.shark {
+  background-color: black;
+  width: 230px;
+  height: 210px;
+  background: url(http://i.imgur.com/rMsGafK.gif);
+  background-size: 100% 100%;
   border: 0;
   border-radius: 0;
+  background-repeat: no-repeat;
 }
 
 .patrick {
   background-color: black;
-  width: 260px;
-  height: 250px;
+  width: 150px;
+  height: 180px;
   background: url(http://i.giphy.com/kpbFOxHZqu5eU.gif);
-  background-size: contain;
+  background-size: 100% 100%;
   border: 0;
   border-radius: 0;
+  background-repeat: no-repeat; 
 }
 
+.btn{
+  padding:5px 12px;
+  float:right;
+  color: #4d4d4d;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: .5px;
+  margin: 0,10,0,20;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 100;
+  text-decoration: none;
+}
 

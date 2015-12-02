@@ -1,9 +1,15 @@
 var makeSlideDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this,top, left, timeBetweenSteps);
   this.$node.addClass('fish');
-  this.timeBetweenSteps /= 6;
-
-
+  this.timeBetweenSteps = this.timeBetweenSteps < 50  ? 50 : this.timeBetweenSteps ;
+  this.top = top;
+  this.left = left;
+  this.width = 100
+  this.height = 60
+  this.bottom = this.top + this.height;
+  this.right = this.left + this.width;
+  this.pair = false;
+  this.lineup = false;
 };
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
@@ -37,17 +43,9 @@ makeSlideDancer.prototype.step = function() {
   if (this.left >= width) {
     this.left = 0;
   }
-
-  // this.left+=40;
-  // this.$node.animate({left: this.left}, this.timeBetweenSteps , 'linear', function(){
-  //   console.log(this);
-  //   console.log($(this));
-  //   if (this.left >= width) {
-  //     this.left = 0;
-  //     $(this).css({'left': 0});
-  //   }
-  // });
-
 };
+
+
+
 
 

@@ -1,9 +1,33 @@
 var makePatrick = function(top, left, timeBetweenSteps) {
+
   makeDancer.call(this,top, left, timeBetweenSteps);
   this.$node.addClass('patrick');
+  this.left = left;
+  this.top = top;
 
-  $('body').on('click', '.patrick', function(event){
-   $('.patrick').draggable();
+
+  $('body').on('mousedown', '.patrick', function(event){
+   $('.patrick').draggable(
+
+       {
+        drag: function(){
+            var offset = $(this).offset();
+            var xPos = offset.left;
+            var yPos = offset.top;
+
+            var xFish = fishMaster.$node.position().left;
+            var yFish = fishMaster.$node.position().top;
+
+            if (Math.abs(xPos - xFish) < 100 && Math.abs(yPos - yFish)){
+              scatterFish();
+            }
+           $('body').off('mouseup', '.patrick');
+        }
+      }
+    );
+    
+    
+
  });
   
 }
@@ -24,4 +48,5 @@ makePatrick.prototype.step = function() {
     // other effects you can use on a jQuery-wrapped html tag.
     // this.$node.toggle();
   };
+
 
