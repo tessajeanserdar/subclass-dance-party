@@ -11,6 +11,7 @@ var makePatrick = function(top, left, timeBetweenSteps) {
     $('.patrick').draggable(
        {
         drag: function(){
+          if ($('.fish').length > 0) {
             var offset = $(this).offset();
             var xPos = offset.left;
             var yPos = offset.top;
@@ -21,6 +22,7 @@ var makePatrick = function(top, left, timeBetweenSteps) {
             if (Math.abs(xPos - xFish) < 100 && Math.abs(yPos - yFish)){
               scatterOnce();
             }
+          }
          }
       }
     );
