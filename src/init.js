@@ -26,8 +26,8 @@ $(document).ready(function() {
     }
 
     var dancer = new dancerMakerFunction(
-      ($("body").height() - 180) * Math.random(),
-      ($("body").width() - 150) * Math.random(),
+      ($("body").height()) * Math.random(),
+      ($("body").width()) * Math.random(),
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
@@ -36,12 +36,12 @@ $(document).ready(function() {
 
   $('.lineUpButton').on("click", function(event){
     var height = $(window).height() / 2;
-    var widthInterval = $(window).width() / $('.dancer').length;
-    $('.dancer').css('top', height);
+    var widthInterval = $(window).width() / ($('.shark').length-1);
+    $('.shark').css('top', height);
 
-    var counter = widthInterval;
-    $('.dancer').each(function(index,value){
-      console.log(this);
+    var counter = 0;
+    $('.shark').each(function(index,value){
+
       $(this).css('left', counter);
       counter += widthInterval;
     })

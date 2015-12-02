@@ -7,8 +7,8 @@ var makePatrick = function(top, left, timeBetweenSteps) {
 
 
   $('body').on('mousedown', '.patrick', function(event){
-   $('.patrick').draggable(
-
+    var scatterOnce = _.once(scatterFish);
+    $('.patrick').draggable(
        {
         drag: function(){
             var offset = $(this).offset();
@@ -19,14 +19,13 @@ var makePatrick = function(top, left, timeBetweenSteps) {
             var yFish = fishMaster.$node.position().top;
 
             if (Math.abs(xPos - xFish) < 100 && Math.abs(yPos - yFish)){
-              scatterFish();
+              scatterOnce();
             }
-           $('body').off('mouseup', '.patrick');
-        }
+         }
       }
     );
     
-    
+
 
  });
   

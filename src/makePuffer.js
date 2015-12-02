@@ -2,6 +2,7 @@ var makePuffer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this,top, left, timeBetweenSteps);
   console.log(this.$node);
   this.$node.addClass('puffer');
+  this.right = true;
 
 }
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
@@ -20,8 +21,25 @@ makePuffer.prototype.step = function() {
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   // this.$node.toggle();
-  var styleSet = {
-    left : "+=50"
+
+  if(this.right){
+    var styleSet = {
+      left : "+=50"
+    }
+    this.$node.removeClass('flip');
+  } else {
+    var styleSet = {
+      left : "-=50"
+    }
+    this.$node.addClass('flip');
+  }
+  
+  if(this.$node.offset().left >= $(window).width() - 100){
+    this.right = false;
+  } else if ( this.$node.offset().left <= 0
+
+    ){
+    this.right = true;
   }
 
   this.$node.animate(styleSet);
